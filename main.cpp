@@ -1,3 +1,12 @@
+/*
+* @Authors: Tiago Jordão Pereira Cabral de Morais
+*	   	    Louis Arthur Machado Bezerra
+* @Teacher: Silvio Costa Sampaio
+* @University: UFRN
+* @Class: LP1
+* @Project: FrogRace
+*/
+
 #include <iostream>
 
 #include "sapo.h"
