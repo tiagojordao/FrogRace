@@ -4,28 +4,31 @@
 #include <iostream>
 #include <ostream>
 #include <random>
+#include <string>
 
 class Sapo {
 	private:
-		// ==> sapos [quantidade de sapos = 3][1: Identificador do sapo, 2: Distancia percorrida, 3: Quantidade de Pulos]
-		int sapos [3][3];
+		std::string identificador;
+		int distancia_percorrida;
+		int quantidade_pulos;
 		int tamanho_pulo;
-		int turno = 1;
+		// Random ==>
 		std::random_device rd;
 		std::default_random_engine gen;
 		std::uniform_int_distribution<> dis;
+		// ===
 	public:
 		static int distancia_corrida;
-		friend std::ostream& operator<< (std::ostream &o, Sapo const t);
 		Sapo ();
+		Sapo (std::string id_);
 		~Sapo ();
-		int getIdentificador (int identificador);
-		int getDistanciaPercorrida (int identificador);
-		int getQuantidadePulos (int identificador);
-		void setDistanciaPercorrida (int identificador, int value_);
-		void setQuantidadePulos (int identificador, int value_);
-		void printRace ();
-		int pular (int identificador);
+		std::string getIdentificador ();
+		int getDistanciaPercorrida ();
+		int getQuantidadePulos ();
+		void setIdentificador (std::string newId);
+		void setDistanciaPercorrida (int newDist);
+		void setQuantidadePulos (int newQnt);
+		int pular ();
 };
 
 

@@ -1,36 +1,20 @@
 #include <iostream>
 
 #include "sapo.h"
-
-using namespace std;
+#include "jogo.h"
 
 int Sapo::distancia_corrida = 50;
 
-int main(int argc, char const *argv[]) {
+int main( void ) {
 
-	int i = 0;
+	Jogo jogo;
 
-	Sapo sapo;
+	int qnt_sapos;
 
-	while (true){
-		int result = sapo.pular (i);
-			if (result == 1){
-				sapo.printRace();
-				std::cout  << std::endl << "--- Resultado Final ------------------------------------------------------" << std::endl << std::endl;
-				cout << "Sapo (" << sapo.getIdentificador(i) << ") ganhou e percorreu uma distância de " << sapo.getDistanciaPercorrida (i) << "m com um total de " << sapo.getQuantidadePulos(i) << " pulos!" << endl;
-				std::cout  << std::endl << "--------------------------------------------------------------------------" << std::endl;
-				return 0;
-			}
-		i++;
-		if (i == 3){
-			sapo.printRace();
-			i = 0;
-		}
-	}
-
-
-
-	
+	std::cout << "\n------------------------------------------\n";
+	std::cout << "Adicione o Número de Sapos: \n>>> ";
+	std::cin >> qnt_sapos;
+	jogo.addSapo (qnt_sapos);
 
 	return 0;
 }
